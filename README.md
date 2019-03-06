@@ -21,6 +21,11 @@ Valida que ao inserir um valor inferior a 20,00 no campo de "Valor a Poupar", se
 ### Scenario: Validate Invalid Time Value Input
 Valida que ao inserir 0 no campo "Por quanto tempo poupar", seja exibido o alerta "Valor esperado não confere"
 
+## Feature: SimulationAPI
+
+### Scenario: Validate Correct GET Response
+Valida que o response do GET seja idêntico ao esperada.
+
 ## Técnicas e Tecnologias
 Foram criados testes básicos para atender aos critérios de aceitação informados. Mas poderiam ser realizados vários outros cenários.
 
