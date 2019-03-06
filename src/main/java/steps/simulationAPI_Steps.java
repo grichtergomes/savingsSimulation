@@ -5,6 +5,7 @@ package steps;
 
 import java.io.IOException;
 
+import org.codehaus.jettison.json.JSONException;
 import org.testng.Assert;
 
 import cucumber.api.java.en.Given;
@@ -22,7 +23,7 @@ public class simulationAPI_Steps {
 	}
 	
 	@Then("I validate the GET response")
-	public void validateGETResponse() {	
+	public void validateGETResponse() throws JSONException {	
 		Assert.assertTrue(simulationAPIDefinitions.validateGETResponse(),
 				"Ops! Response nao esta de acordo o esperado!!!");
 	}
