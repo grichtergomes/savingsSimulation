@@ -10,9 +10,9 @@ import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java/features/SavingsSimulatorUI/SavingSimulator_InvalidInput.feature",
+@CucumberOptions(features = "src/test/java/features/SavingsSimulatorUI/SavingsSimulator_InvalidInputs.feature",
 glue = { "" }, monochrome = true, dryRun = false)
 
-public class SavingSimulator_InvalidInputTest extends AbstractTestNGCucumberTests{
+public class SavingsSimulator_InvalidInputTest extends AbstractTestNGCucumberTests{
 
 }

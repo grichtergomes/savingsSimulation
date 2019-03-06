@@ -3,14 +3,9 @@
  */
 package setup;
 
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import Utils.seleniumUtils;
 import cucumber.api.Scenario;
@@ -28,14 +23,16 @@ public class TestRule {
 	@Before
 	public void beforeScenario(Scenario scenario) {
 		
-		String pathProjeto = System.getProperty("user.dir");
-		System.setProperty("webdriver.chrome.driver", pathProjeto + "/drivers/chromedriver.exe");
-			
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--disable-notifications");
-		options.addArguments("--disable-infobars");
-		driver = new ChromeDriver(options);		
-		driver.manage().window().maximize();
+		if (!scenario.getSourceTagNames().contains("@APITest")) {
+			String pathProjeto = System.getProperty("user.dir");
+			System.setProperty("webdriver.chrome.driver", pathProjeto + "/drivers/chromedriver.exe");
+				
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--disable-notifications");
+			options.addArguments("--disable-infobars");
+			driver = new ChromeDriver(options);		
+			driver.manage().window().maximize();
+		}
 	}
 	
 	public static WebDriver getDriver() {
@@ -48,8 +45,8 @@ public class TestRule {
 	
 	@After
 	public void afterScenario(Scenario scenario) {
-		
-		driver.quit();
-		
+		if (!scenario.getSourceTagNames().contains("@APITest")) {
+			driver.quit();
+		}		
 	}
 }
