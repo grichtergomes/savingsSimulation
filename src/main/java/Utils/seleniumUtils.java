@@ -33,20 +33,13 @@ public class seleniumUtils {
 					.pollingEvery(2, TimeUnit.SECONDS).ignoring(NoSuchElementException.class)
 					.ignoring(StaleElementReferenceException.class).ignoring(TimeoutException.class);
 			try {
-				webElement = wait.until(ExpectedConditions.elementToBeClickable(element));
-				// ReportUtils.logMensagem(Status.INFO, "Elemento encontrado com sucesso!");
+				webElement = wait.until(ExpectedConditions.elementToBeClickable(element));				
 			} catch (Exception e) {
-//				ReportUtils.logMensagem(Status.INFO, "Elemento não foi encontrado! " + e.getMessage());
-//				Log4jUtils.logMensagem("INFO", "Elemento não foi encontrado! " + e.getMessage());
 				return false;
 			}
 		} catch (NoSuchElementException e) {
-//			ReportUtils.logMensagem(Status.INFO, "Elemento não foi encontrado! " + e.getMessage());
-//			Log4jUtils.logMensagem("INFO", "Elemento não foi encontrado! " + e.getMessage());
 			return false;
 		} catch (StaleElementReferenceException e) {
-//			ReportUtils.logMensagem(Status.FAIL, e.getMessage());
-//			Log4jUtils.logMensagem("ERROR", e.getMessage());
 			return false;
 		}
 		return webElement != null;

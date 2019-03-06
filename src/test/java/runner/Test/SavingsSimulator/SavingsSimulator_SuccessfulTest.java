@@ -10,9 +10,9 @@ import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java/features/SavingsSimulatorUI/SavingSimulator_Successful.feature",
+@CucumberOptions(features = "src/test/java/features/SavingsSimulatorUI/SavingsSimulator_Successful.feature",
 glue = { "" }, monochrome = true, dryRun = false)
 
-public class SavingSimulator_SuccessfulTest extends AbstractTestNGCucumberTests{
+public class SavingsSimulator_SuccessfulTest extends AbstractTestNGCucumberTests{
 
 }

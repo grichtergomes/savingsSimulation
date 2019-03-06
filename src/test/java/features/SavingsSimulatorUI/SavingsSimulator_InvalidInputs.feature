@@ -1,4 +1,4 @@
-Feature: Validate Successful Savings Simulation
+Feature: Validate Fields Alert with Invalid Inputs
 
   @negativeTest
   Scenario: Validate Invalid Initial Value Input
@@ -15,7 +15,7 @@ Feature: Validate Successful Savings Simulation
     Then minimum monthly value alert must be displayed
 
   @negativeTest
-  Scenario: Validate Invalid Monthly Value Input
+  Scenario: Validate Invalid Time Value Input
     Given I access savings simulation page
     When inform for how long to save 0
     And click the Simulate Button

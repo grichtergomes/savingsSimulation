@@ -1,7 +1,7 @@
 Feature: Validate Successful Savings Simulation
 
   @successTest
-  Scenario Outline: Validate Successful Saving Simulation
+  Scenario Outline: Validate Successful Savings Simulation
     Given I access savings simulation page
     When I inform the initial value to save <initialValue>
     And inform the monthly value to save <monthlyValue>
